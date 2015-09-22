@@ -1,0 +1,12 @@
+{
+    "name": "interview/notes",
+    "description": "phper's important notes for interview",
+    "keywords": ["interview", "notes", "php"],
+    "authors": [
+        {
+            "name" : "TeoChoi",
+            "email" : "709078822@qq.com"
+        }
+    ],
+    "license": "MIT"
+}
