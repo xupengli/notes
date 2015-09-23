@@ -4,7 +4,7 @@
  
  > mysql> show status (like 'Com_select');
  
- Com_insert写入次数,Com_delete删除次数,connections(试图连接mysql服务的次数),uptime(mysql工作时间),slow_queries(慢查询次数)[具体参数]()
+ Com_insert写入次数,Com_delete删除次数,connections(试图连接mysql服务的次数),uptime(mysql工作时间),slow_queries(慢查询次数)[具体参数](https://github.com/TeoChoi/notes/blob/master/src/mysql_show_status.md)
 
 3. **定位执行效率较低的SQL语句**  
  通过慢查询日志，定位查询效率低下的SQL语句，然后分析语句进行优化
