@@ -87,12 +87,7 @@ possible_keys: NULL
  > mysql> set unique_checks=1  
  > mysql> set autocommit =1  
 
- * insert语句优化，一次性插入多条记录
- * order by语句排序优化，优化思路就是尽可能的减少额外的排序(filesort)，通过索引直接返回有序数据
- * where条件和order by 字段使用相同的索引，并且order by的顺序和索引顺序相同，还有order by的字段都是降序或者升序。
- * SELECT查询时最好指定具体的字段名，SELECT * 会选择所有字段，会增加排序区的使用，降低SQL性能
- * group by语句优化 MySQL默认情况下对group by col1,col2..的字段进行排序，可以通过指定order by null来消除这种排序
- * or条件优化 用到OR的查询，如果要使用索引，那OR之间的每个条件必须是索引，并且要分别建立索引，不能使用联合索引。
+
  
  
  
