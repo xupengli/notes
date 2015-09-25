@@ -29,6 +29,7 @@ NULL字段的索引需要额外空间
 NULL字段的复合索引无效  
 bad case：`name` char(32) default null`age` int not null  
 good case：`age` int not null default 0  
+
 5. 少用text/blob，varchar的性能会比text高很多；实在避免不了blob，请拆表
 6. 不在数据库里存图片
 7. 对于MyISAM表，如果没有任何变长列(VARCHAR、TEXT或BLOB列)，使用固定尺寸的记录格式。这比较快但是不幸地可能会浪费一些空间。即使你已经用CREATE选项让VARCHAR列ROW_FORMAT=fixed，也可以提示想使用固定长度的行
@@ -51,6 +52,7 @@ good case：`age` int not null default 0
 主键不应该被修改  
 字符串不应该做主键  
 如果不指定主键，innodb会使用唯一且非空值索引代替
+
 5. 不用外键，请由程序保证约束
 6. 避免在已有索引的前缀上建立索引。例如：如果存在index（a，b）则去掉index（a）
 7. 控制单个索引的长度。使用key（name（8））在数据的前面几个字符建立索引
@@ -79,6 +81,7 @@ select id from t where phone=’159′ or phone=’136′ =>select id from t whe
 select id from t where phone = '159' or name = 'john';  
 =>  
 select id from t where phone='159' union  select id from t where name='jonh';
+
 7. 避免负向%，如not in/like
 8. 慎用count(*)
 9. limit高效分页
@@ -86,6 +89,7 @@ select id from t where phone='159' union  select id from t where name='jonh';
 select id from t limit 10000, 10;  
 =>  
 select id from t where id > 10000 limit 10;
+
 10. 使用union all替代union，union有去重开销
 11. 少用连接join
 12. 使用group by，分组、自动排序
@@ -94,6 +98,7 @@ select id from t where id > 10000 limit 10;
 15. 对数据的更新要打散后批量更新，不要一次更新太多数据
 16. 使用性能分析工具
 > Sql explain  /  showprofile   /    mysqlsla
+> 
 17. 使用--log-slow-queries –long-query-time=2查看查询比较慢的语句。然后使用explain分析查询，做出优化
 > show profile;  
 mysqlsla;  
