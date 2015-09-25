@@ -98,7 +98,7 @@ select id from t where id > 10000 limit 10;
 15. 对数据的更新要打散后批量更新，不要一次更新太多数据
 16. 使用性能分析工具
 > Sql explain  /  showprofile   /    mysqlsla
-> 
+
 17. 使用--log-slow-queries –long-query-time=2查看查询比较慢的语句。然后使用explain分析查询，做出优化
 > show profile;  
 mysqlsla;  
