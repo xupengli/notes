@@ -10,3 +10,5 @@
 4. [数据库事务四大特性](/src/database&translation.md)
 5. [memcached配置](/src/memcached.md)
 6. [memcached原子性](/src/memcache&atomicity.md)
+7. [分布式文件系统简介](/src/分布式文件系统.md)
+
